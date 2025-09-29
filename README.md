@@ -9,7 +9,7 @@
    - c link all .o
    - install copy the executable in /bin
    - clean remove all .o
-  so if you just want to install it enter `make all install`
+so if you just want to install it enter `make all install`
 
 ## functionalities
   - working menus and text box
