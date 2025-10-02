@@ -13,6 +13,15 @@ PROJ_NAME := e++
 
 all: $(PROJ_NAME)
 
+
+############################# GAME ##################################
+
+game_src1.o: ./src/game/src1.cxx
+	$(CPP) $(FLAG) ./src/game/src1.cxx -o ./build/game_src1.o
+
+game: game_src1.o
+	echo game compited
+
 ############################# TUI  ##################################
 
 tui_menu.o: ./src/tui/menu.cxx
@@ -26,14 +35,11 @@ tui: tui_menu.o tui_text_box.o
 
 ############################# UTIL ##################################
 
-util_src1.o: ./src/util/src1.cxx
-	$(CPP) $(FLAG) ./src/util/src1.cxx -o ./build/util_src1.o
-
 
 util_func.o: ./src/util/func.cpp
 	$(CPP) $(FLAG) ./src/util/func.cpp -o ./build/util_func.o
 
-util: util_func.o util_src1.o
+util: util_func.o
 	echo util compited
 
 #####################################################################
@@ -42,7 +48,7 @@ main.o: ./main.cpp
 	$(CPP) $(FLAG) ./main.cpp -o ./build/main.o
 
 #link tout (normalement)
-$(PROJ_NAME): util tui main.o
+$(PROJ_NAME): game util tui main.o
 	$(CPP) -lncurses ./build/*.o -o $(PROJ_NAME)
 
 c:
