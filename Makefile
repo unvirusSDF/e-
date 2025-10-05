@@ -19,7 +19,14 @@ all: $(PROJ_NAME)
 game_src1.o: ./src/game/src1.cxx
 	$(CPP) $(FLAG) ./src/game/src1.cxx -o ./build/game_src1.o
 
-game: game_src1.o
+game_src2.o: ./src/game/src2.cxx
+	$(CPP) $(FLAG) ./src/game/src2.cxx -o ./build/game_src2.o
+
+game_log.o: ./src/game/log.cxx
+	$(CPP) $(FLAG) ./src/game/log.cxx -o ./build/game_log.o
+
+
+game: game_src1.o game_src2.o game_log.o
 	echo game compited
 
 ############################# TUI  ##################################

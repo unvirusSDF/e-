@@ -32,11 +32,7 @@ int main (int argc, char *argv[]) {
         }),
       menu_opts( (char*) "play",main_bis)}, s);
 
-    endwin();
-
-
-  std::cout << "until there it works" << std::endl;
- 
+    endwin(); 
 
   return 0;
 }
