@@ -7,6 +7,7 @@
 
 #include "./tui/tui.hpp"
 #include "./game/game.hpp"
+#include "./util/util.hpp"
 
 namespace epp {
 
@@ -20,5 +21,4 @@ namespace epp {
   void quit(uint8_t q=1);
 
   uint8_t quited();
-
 }

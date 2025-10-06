@@ -19,14 +19,14 @@ all: $(PROJ_NAME)
 game_src1.o: ./src/game/src1.cxx
 	$(CPP) $(FLAG) ./src/game/src1.cxx -o ./build/game_src1.o
 
-game_src2.o: ./src/game/src2.cxx
-	$(CPP) $(FLAG) ./src/game/src2.cxx -o ./build/game_src2.o
+game_act.o: ./src/game/action.cxx
+	$(CPP) $(FLAG) ./src/game/action.cxx -o ./build/game_act.o
 
 game_log.o: ./src/game/log.cxx
 	$(CPP) $(FLAG) ./src/game/log.cxx -o ./build/game_log.o
 
 
-game: game_src1.o game_src2.o game_log.o
+game: game_src1.o game_act.o game_log.o
 	echo game compited
 
 ############################# TUI  ##################################
@@ -46,7 +46,10 @@ tui: tui_menu.o tui_text_box.o
 util_func.o: ./src/util/func.cpp
 	$(CPP) $(FLAG) ./src/util/func.cpp -o ./build/util_func.o
 
-util: util_func.o
+util_tree.o: ./src/util/tree.cpp
+	$(CPP) $(FLAG) ./src/util/tree.cpp -o ./build/util_tree.o
+
+util: util_func.o util_tree.o
 	echo util compited
 
 #####################################################################

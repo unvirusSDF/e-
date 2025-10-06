@@ -160,7 +160,6 @@ namespace epp {
 
 
     delete shared_data;
-    end_act();
     endlog();
     rst_scr();
 

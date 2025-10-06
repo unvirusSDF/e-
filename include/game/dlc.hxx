@@ -41,6 +41,5 @@ namespace epp {
   action get_act(def_act);
 
   void init_act(void);
-  void end_act(void);
 
 }
